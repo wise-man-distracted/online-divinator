@@ -1,16 +1,25 @@
-
-<h1>Welcome to {name}</h1>
 <p>{deck}</p>
-<p></p>
+{#each Object.entries(imageModules) as [_path, module]}
+	<enhanced:img src={module.default} alt="card" />
+{/each}
 <p>{JSON.stringify(images.cards, null, 2)}</p>
-<!-- <img alt="Card" src="./tarot-json/cards/{images.cards[1].img}"> -->
 
 <script lang="ts">
+    import images from '../tarot-json/tarot-images.json';
     
-    import images from '../../static/tarot-json/tarot-images.json';
+    const imageModules = import.meta.glob(
+		'/src/tarot-json/cards/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp,svg}',
+		{
+			eager: true,
+			query: {
+				enhanced: true
+			}
+		}
+	)
+
     // let imagesJSON = JSON.parse(images);
     console.log(images.cards[1]);
-	let name : string = 'Svelte';
+
     let deck : number[] = [0, 1, 5, 7, 78];
 
 

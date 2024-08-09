@@ -103,6 +103,7 @@ declare module '$env/static/private' {
 	export const LC_NUMERIC: string;
 	export const OLDPWD: string;
 	export const NODE_ENV: string;
+	export const VIPSHOME: string;
 }
 
 /**
@@ -211,6 +212,7 @@ declare module '$env/dynamic/private' {
 		LC_NUMERIC: string;
 		OLDPWD: string;
 		NODE_ENV: string;
+		VIPSHOME: string;
 		[key: `PUBLIC_${string}`]: undefined;
 		[key: `${string}`]: string | undefined;
 	}
