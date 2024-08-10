@@ -1,8 +1,8 @@
-<p>{deck}</p>
-{#each Object.entries(shuffledImages) as [_path, module]}
-	<enhanced:img src={module.default} alt="card" />
+{#each Object.entries(shuffledDeck) as [_path, module], z}
+    {#if (z<4)}
+        <enhanced:img src={module.default} alt="card" />
+    {/if}
 {/each}
-<p>{JSON.stringify(images.cards, null, 2)}</p>
 
 <script lang="ts">
     import images from '../tarot-json/tarot-images.json';
@@ -26,11 +26,9 @@
 
 
     const imagesDeck = Object.entries(imageModules)
-
-    // let imagesJSON = JSON.parse(images);
-    console.log(shuffle(imagesDeck));
-    let shuffledImages = Object.fromEntries(imagesDeck)
-    console.log(shuffledImages);
+    let shuffledDeckArray = shuffle(imagesDeck)
+    let shuffledDeck = Object.fromEntries(shuffledDeckArray)
+    // console.log(shuffledImages);
 
     let deck : number[] = [0, 1, 5, 7, 78];
 
