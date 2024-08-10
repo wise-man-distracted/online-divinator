@@ -1,5 +1,5 @@
 <p>{deck}</p>
-{#each Object.entries(imageModules) as [_path, module]}
+{#each Object.entries(shuffledImages) as [_path, module]}
 	<enhanced:img src={module.default} alt="card" />
 {/each}
 <p>{JSON.stringify(images.cards, null, 2)}</p>
@@ -16,9 +16,21 @@
 			}
 		}
 	)
+    const shuffle = <T>(array: T[]) => { 
+    for (let i = array.length - 1; i > 0; i--) { 
+        const j = Math.floor(Math.random() * (i + 1)); 
+        [array[i], array[j]] = [array[j], array[i]]; 
+    }
+    return array; 
+    }; 
+
+
+    const imagesDeck = Object.entries(imageModules)
 
     // let imagesJSON = JSON.parse(images);
-    console.log(images.cards[1]);
+    console.log(shuffle(imagesDeck));
+    let shuffledImages = Object.fromEntries(imagesDeck)
+    console.log(shuffledImages);
 
     let deck : number[] = [0, 1, 5, 7, 78];
 
