@@ -24,7 +24,7 @@
         .map((a) => a.value); 
     };
 
-    let cardElements = []
+    let cardElements : HTMLElement[] = []
     $ : showingCards
     // $ : visibilityValue
     let showingCards = [false, false, false, false, false]
@@ -33,11 +33,11 @@
     // cardElement.style.visibility = "hidden"
     // console.log(cardElement)
     });
-    const showAndHide = (i) => {  
+    const showAndHide = (i : number) => {  
         // beforeUpdate(() => {
             showingCards[i] ? cardElements[i].style.visibility = "hidden" : cardElements[i].style.visibility = "visible"
             showingCards[i] = !showingCards[i]
-            console.log(cardElements)
+            console.log(shuffledDeckArray)
         // });
     }
 
