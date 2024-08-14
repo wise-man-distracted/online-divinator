@@ -1,0 +1,11 @@
+Spread:
+  ☐ Card backs
+  ☐ Change position on click
+  ☐ Opacity to 0 => .5s => opacity to 1 on reloadSpread
+  ☐ Enum to show and hide
+  ☐ 
+Page:
+  ☐ Layouts
+  ☐ Routing
+Server:
+  ☐ Separate server logic from client side

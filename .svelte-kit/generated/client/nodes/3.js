@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/4CardSpread/+page.svelte";
+export { default as component } from "../../../../src/routes/modern5/+page.svelte";
